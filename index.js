@@ -15,6 +15,19 @@ function newImage(src, position, left, bottom) {
     return image;
 }
 
+function newItem(src, position, left, bottom) {
+    let image = document.createElement('img');
+    image.src = src;
+    image.style.position = position;
+    image.style.left = left;
+    image.style.bottom = bottom;
+    document.body.append(image);
+    image.addEventListener('click', function() {
+        image.remove();
+    });
+    return image;
+}
+
 // Usage of newImage function (with help from ChatGPT)
 let greenCharacter = newImage('assets/green-character.gif', 'fixed', '100px', '100px');
 let pineTree = newImage('assets/pine-tree.png', 'fixed', '450px', '200px');
@@ -22,9 +35,12 @@ let tree = newImage('assets/tree.png', 'fixed', '200px', '300px');
 let pillar = newImage('assets/pillar.png', 'fixed', '350px', '100px');
 let crate = newImage('assets/crate.png', 'fixed', '150px', '200px');
 let well = newImage('assets/well.png', 'fixed', '500px', '425px');
-let sword = newImage('assets/sword.png', 'fixed', '500px', '405px');
-let shield = newImage('assets/shield.png', 'fixed', '165px', '185px');
-let staff = newImage('assets/staff.png', 'fixed', '600px', '100px');
+let sword = newItem('assets/sword.png', 'fixed', '500px', '405px');
+
+
+let shield = newItem('assets/shield.png', 'fixed', '165px', '185px');
+let staff = newItem('assets/staff.png', 'fixed', '600px', '100px');
+
 
 
 //Original Code
